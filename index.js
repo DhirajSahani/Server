@@ -1,11 +1,9 @@
-// index.js
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
-
 import cors from "cors";
 import serverless from "serverless-http";
-import router from "./routes/book.routes.js";
+import bookrouter from "./routes/book.routes.js";
 
 dotenv.config();
 connectDB();
@@ -19,7 +17,6 @@ app.get("/", (req, res) => {
   res.send("API Running...");
 });
 
-app.use("/book", router);
+app.use("/book", bookrouter);
 
-// Wrap Express app with serverless
 export default serverless(app);
