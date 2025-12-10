@@ -18,7 +18,8 @@ app.get("/", (req, res) => {
 
 app.use("/book", bookrouter);
 
-const PORT = process.env.PORT || 5000;
+const API = "https://your-render-backend-url.onrender.com"; // ✅
+
 
 // VERY IMPORTANT for Render
 app.listen(PORT, "0.0.0.0", () => {
